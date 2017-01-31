@@ -1,0 +1,93 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+<head>
+	<%= include header.ejs%>
+	<style>
+		.no-js #loader { display: none;  }
+		.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+		.se-pre-con {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+		}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-inverse navbar-static-top container-fluid" role="navigation">
+	<div class="navbar-header">
+
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+		</button> <a class="navbar-brand" href="#">Idea Bank</a>
+	</div>
+
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+
+	</div>
+
+</nav>
+
+<div class="se-pre-con">
+
+</div>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+	<h1><span class="fa fa-sign-in"></span> Login</h1>
+
+	<!-- show any messages that come back with authentication -->
+	<% if (message.length > 0) { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+
+	<!-- LOGIN FORM -->
+	<form action="/login" method="post">
+	<div class="form-group">
+		<label>Email</label>
+		<input type="text" class="form-control" name="email" required="required">
+	</div>
+	<div class="form-group">
+		<label>Password</label>
+		<input type="password" class="form-control" name="password" required="required">
+	</div>
+	<button type="submit" class="btn btn-warning btn-lg">Login</button>
+	</form>
+
+	<hr>
+
+	<p>Need an account? <a href="/signup">Signup</a></p>
+	<p>Or go <a href="/">home</a>.</p>
+
+</div>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script>
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
+</script>
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<footer class="container-fluid text-center footer-inverse">
+	<p>Idea Bank 2015</p>
+</footer>
+
+</body>
+</html>

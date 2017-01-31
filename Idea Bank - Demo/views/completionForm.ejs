@@ -1,0 +1,103 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+
+<head>
+    <%=include header.ejs%>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-inverse navbar-static-top container-fluid" role="navigation">
+    <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button> <a class="navbar-brand" href="#">Idea Bank</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+
+            <li>
+                <a href="/logout">Log Out</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1><span class="fa fa-sign-in"></span>Completion Form</h1>
+
+        <!-- show any messages that come back with authentication -->
+        <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <!-- LOGIN FORM -->
+        <form action="/completionForm" method="post">
+            <div class="form-group">
+                <label>Gender</label>
+                <select class="form-control" name="gender">
+                    <option value="Male" >Male</option>
+                    <option value="Female" >Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Birthday</label>
+            </div>
+            <div class="form-group col-xs-4">
+                <input type="text" class="form-control col-xs-2" name="bday" placeholder="Day" required="required">
+            </div>
+            <div class="form-group col-xs-4">
+                <input type="text" class="form-control col-xs-2" name="bmonth" placeholder="Month" required="required">
+            </div>
+            <div class="form-group col-xs-4">
+                <input type="text" class="form-control col-xs-2" name="byear" placeholder="Year" required="required">
+            </div>
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" class="form-control" name="country" required="required">
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <input type="text" class="form-control" name="state" required="required">
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" class="form-control" name="address" placeholder="Please provide your complete address." required="required">
+            </div>
+            <div class="form-group">
+                <label>National Identity Number</label>
+                <input type="text" class="form-control" name="NIC" required="required">
+            </div>
+            <div class="form-group">
+                <label>Landline Number</label>
+                <input type="text" class="form-control" name="landlineNo" required="required">
+            </div>
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="text" class="form-control" name="mobileNo" required="required">
+            </div>
+            <div class="form-group">
+                <label>Skills</label>
+                <textarea rows="12" cols="8" class="form-control" name="skills" placeholder="Write about the skills you have." required="required"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-warning btn-lg">Done</button>
+        </form>
+
+    </div>
+
+</div>
+<br/>
+
+<footer class="container-fluid text-center">
+    <p>Idea Bank 2015</p>
+</footer>
+
+</body>
+</html>
